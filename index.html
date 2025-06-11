@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freedom Fit - Sistema de Prevenção à Evasão</title>
+    <meta name="description" content="Sistema inteligente de prevenção à evasão de alunos em academias">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff3c3c'><path d='M3 17V7M7 17V11M11 17V13M15 17V9M19 17V3' stroke='%23ff3c3c' stroke-width='2' stroke-linecap='round'/></svg>" type="image/svg+xml">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- VLibras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">FREEDOM FIT</div>
+            <ul class="nav-links">
+                <li><a href="#sobre"><i class="fas fa-info-circle"></i> Sobre</a></li>
+                <li><a href="#servicos"><i class="fas fa-dumbbell"></i> Serviços</a></li>
+                <li><a href="#evasao"><i class="fas fa-chart-line"></i> Evasão</a></li>
+                <li><a href="#previsoes"><i class="fas fa-robot"></i> Previsões IA</a></li>
+                <li><a href="#contato"><i class="fas fa-envelope"></i> Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <video autoplay muted loop class="video-bg">
+            <source src="assets/video-background.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos HTML5
+        </video>
+        <div class="hero-content">
+            <h1>Inteligência Contra a Evasão</h1>
+            <p class="section-subtitle">Reduza em até 40% o cancelamento de planos com nossa tecnologia preditiva</p>
+            <a href="#previsoes" class="btn">Ver Previsões <i class="fas fa-arrow-down"></i></a>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="fade-in">
+        <h2>Sobre o Sistema</h2>
+        <p class="section-subtitle">Tecnologia avançada para gestão de academias</p>
+        
+        <div class="sobre-content">
+            <p>A <strong>Freedom Fit</strong> é uma solução tecnológica especializada em <strong>gestão preditiva para academias</strong>. Desenvolvemos um sistema de inteligência artificial que analisa padrões comportamentais para <strong>reduzir em até 40% a evasão de alunos</strong>, problema que impacta 35% do setor fitness nacional.</p>
+            
+            <p>Nossa plataforma integra dados de frequência, sazonalidade e perfil demográfico, oferecendo <strong>relatórios estratégicos</strong> e <strong>alertas preventivos</strong> para retenção de clientes. Testada em mercados competitivos como Wenceslau Braz/PR (pop. 20k), onde identificamos quedas de 28% no cancelamento pós-implantação.</p>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="fade-in">
+        <h2>Nossas Soluções</h2>
+        <p class="section-subtitle">Tecnologia para transformar sua academia</p>
+        
+        <div class="servicos-grid">
+            <div class="servico-card">
+                <i class="fas fa-chart-pie icone-servico"></i>
+                <h3>Análise Preditiva</h3>
+                <p>Tecnologia proprietária que prevê cancelamentos com 89% de precisão, analisando 12 variáveis comportamentais e sazonais.</p>
+            </div>
+            
+            <div class="servico-card">
+                <i class="fas fa-brain icone-servico"></i>
+                <h3>Inteligência de Negócios</h3>
+                <p>Painéis gerenciais com KPIs estratégicos: custo de aquisição vs. retenção, taxa de renovação por perfil e previsão de receita.</p>
+            </div>
+            
+            <div class="servico-card">
+                <i class="fas fa-shield-alt icone-servico"></i>
+                <h3>Prevenção de Evasão</h3>
+                <p>Protocolos automáticos para retenção segmentada, incluindo campanhas especiais para períodos críticos (ex: inverno).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Evasão -->
+    <section id="evasao" class="fade-in">
+        <h2>Gráfico de Evasão</h2>
+        <p class="section-subtitle">Análise mensal do comportamento dos alunos</p>
+        
+        <div class="grafico-container">
+            <canvas id="graficoEvasao"></canvas>
+        </div>
+        
+        <div class="texto-analise">
+            <h3>Interpretação dos Dados</h3>
+            <p>A evasão de alunos apresenta padrão sazonal, com picos no inverno e recuperação gradual após intervenções estratégicas. Nosso sistema identifica esses padrões com 3 meses de antecedência.</p>
+        </div>
+    </section>
+
+    <!-- Previsões -->
+ <!-- Previsões -->
+<section id="previsoes" class="fade-in">
+    <h2>Previsões de Evasão</h2>
+    <p class="section-subtitle">Inteligência Artificial aplicada à retenção de alunos</p>
+    
+    <div class="botoes-previsao">
+        <button id="loadPredictionsBtn" class="btn">
+            <i class="fas fa-users"></i> Todos Alunos
+        </button>
+        <button id="loadCriticalBtn" class="btn btn-critico">
+            <i class="fas fa-exclamation-triangle"></i> Críticos
+        </button>
+        <button id="loadStatsBtn" class="btn">
+            <i class="fas fa-chart-bar"></i> Estatísticas
+        </button>
+    </div>
+    <div id="predictionsData" class="predictions-container">
+        <div class="sem-dados">
+            <p>Nenhum dado carregado ainda</p>
+        </div>
+    </div>
+    
+    <div class="graficos-container">
+        <div class="grafico-wrapper">
+            <h3>Distribuição de Risco</h3>
+            <canvas id="graficoRisco"></canvas>
+        </div>
+    </div>
+</section>
+
+ <!-- Contato/Equipe -->
+<section id="contato" class="fade-in">
+    <h2>Nossa Equipe</h2>
+    <p class="section-subtitle">Especialistas em dados e gestão esportiva</p>
+    
+    <div class="equipe-section">
+        <div class="equipe-grid">
+            <!-- Membro 1 -->
+            <div class="membro-card">
+                <div class="membro-foto">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="membro-info">
+                    <h3>Vinicius Guimarães</h3>
+                    <p class="membro-cargo">Especialista em IA/Machine Learning</p>
+                    <div class="membro-contato">
+                        <p><i class="fas fa-envelope"></i> vinicius.data@email.com</p>
+                        <p><i class="fas fa-phone"></i> (46) 95747-4654</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Membro 2 -->
+            <div class="membro-card">
+                <div class="membro-foto">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="membro-info">
+                    <h3>Renata Rhayzel</h3>
+                    <p class="membro-cargo">Desenvolvedora Front-end</p>
+                    <div class="membro-contato">
+                        <p><i class="fas fa-envelope"></i> renata.front@email.com</p>
+                        <p><i class="fas fa-phone"></i> (46) 93546-6748</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Membro 3 -->
+            <div class="membro-card">
+                <div class="membro-foto">
+                    <i class="fas fa-server"></i>
+                </div>
+                <div class="membro-info">
+                    <h3>Everson Daniel</h3>
+                    <p class="membro-cargo">Desenvolvedor Back-end</p>
+                    <div class="membro-contato">
+                        <p><i class="fas fa-envelope"></i> everson.back@email.com</p>
+                        <p><i class="fas fa-phone"></i> (46) 97358-3587</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Membro 4 -->
+            <div class="membro-card">
+                <div class="membro-foto">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <div class="membro-info">
+                    <h3>Ana Luiza</h3>
+                    <p class="membro-cargo">Designer UX/UI</p>
+                    <div class="membro-contato">
+                        <p><i class="fas fa-envelope"></i> ana.design@email.com</p>
+                        <p><i class="fas fa-phone"></i> (46) 96789-2346</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">FREEDOM FIT</div>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2025 Freedom Fit. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
