@@ -19,7 +19,7 @@ Sistema inteligente de prevenção à evasão de alunos em academias usando IA p
 2. Abra o arquivo `index.html` no navegador
 
 ## Autores
-- Vinicius Guimarães (IA/Machine Learning)
+- Vinicius Guimarães (IA/Machine Learning, Back-end)
 - Renata Rhayzel (Front-end)
-- Everson Daniel (Back-end)
+- Everson Daniel (Front-end)
 - Ana Luiza (Design UX/UI)
